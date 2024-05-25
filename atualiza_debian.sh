@@ -10,6 +10,9 @@ else
     clear ; exit 1
 fi
 
+# Tela de boas vindas.
+Separador1=$(seq -s" " 43 | tr -d [0-9])
+Separador2=$(seq -s"-" 43 | tr -d [0-9])
 clear
 echo -e "#=== O sistema será atualizado. ===#      |"
 echo "                                          |"
@@ -17,9 +20,8 @@ echo "O que fazer após a atualização?           |"
 echo "1 - Reiniciar.                            |"
 echo "2 - Desligar.                             |"
 echo -e "* - Continuar a usar o sistema.           |"
-echo "                                          |"
-echo "------------------------------------------|"
-
+echo "$Separador1|"
+echo "$Separador2|"
 read -p "Digite a sua escolha : " Escolha
 
 
@@ -42,4 +44,3 @@ case $Escolha in
     *)  clear
         echo "Sistema liberado!" && sleep 1;;
 esac
-
